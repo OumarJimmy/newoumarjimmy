@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professional Website</title>
+
+
+        <!-- CSS CODE-->
+    <style>
+        /* Reset some default styles */
+        body, h1, h2, h3, p, ul, li, form {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Basic styling */
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            padding: 0;
+            margin: 0;
+            background: url('https://img.freepik.com/free-vector/beautiful-beach-design_1176-266.jpg?size=626&ext=jpg&ga=GA1.1.285014827.1726231418&semt=ais_hybrid') no-repeat center center/cover;
+        }
+
+        header {
+            background: rgba(51, 51, 51, 0.8); /* Semi-transparent background */
+            color: #fff;
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+        }
+
+        header .container {
+            width: 80%;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header .logo {
+            font-size: 2rem;
+            font-weight: bold;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 1rem;
+            margin-right: 1rem;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .login-button, .signup-button {
+            background: #ff6600;
+            border: none;
+            color: #fff;
+            padding: 0.5rem 1rem;
+            font-size: 1.2rem;
+            cursor: pointer;
+            text-transform: uppercase;
+            border-radius: 5px;
+            text-decoration: none;
+            margin-left: 0.5rem;
+        }
+
+        .login-button:hover, .signup-button:hover {
+            background: #e65c00;
+        }
+
+        .logout-button {
+            background: #ff0000;
+            border: none;
+            color: #fff;
+            padding: 0.5rem 1rem;
+            font-size: 1.2rem;
+            cursor: pointer;
+            text-transform: uppercase;
+            border-radius: 5px;
+            text-decoration: none;
+            margin-left: 0.5rem;
+            display: none;
+        }
+
+        .logout-button:hover {
+            background: #e60000;
+        }
+
+        .intro-section {
+            text-align: center;
+            padding: 6rem 1rem;
+            margin-top: 70px; /* Adjust margin-top to account for the fixed header */
+            background: none; /* No background color */
+            color: #fff;
+        }
+
+        .intro-content p {
+            margin: 0.5rem 0;
+        }
+
+        .highlight {
+            font-size: 2.5rem;
+            font-weight: bold;
+        }
+
+        .cta-button {
+            background: #0066cc;
+            color: #fff;
+            padding: 0.75rem 1.5rem;
+            font-size: 1.2rem;
+            cursor: pointer;
+            text-transform: uppercase;
+            border-radius: 5px;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 1rem;
+        }
+
+        .cta-button:hover {
+            background: #005bb5;
+        }
+
+        .shapes-section {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 2rem;
+            padding: 8rem 1rem; /* Increased padding */
+            background: none; /* No background color */
+            color: #fff;
+        }
+
+        .shape {
+            width: 300px; /* Adjust width */
+            height: 300px; /* Adjust height */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: rgba(0, 0, 0, 0.6); /* Slightly transparent background for better readability */
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.5rem;
+            font-weight: bold;
+            border-radius: 15px; /* Rounded corners */
+            text-align: center;
+            padding: 1rem;
+        }
+
+        .shape:hover {
+            background: rgba(0, 0, 0, 0.8);
+        }
+
+        .group-section {
+    padding: 4rem 1rem;
+    text-align: center;
+}
+
+.group-background {
+    padding: 2rem;
+    border-radius: 90px;
+    color: #000000;
+    text-align: center;
+    background-size: cover;
+    background-position: center;
+    max-width: 3000px;
+    height: 500px; /* Adjust height */
+    margin: 0 auto;
+}
+
+.group1-bg {
+    background: url('https://scontent.fcai22-1.fna.fbcdn.net/v/t39.30808-6/459166194_926798612818044_8032972176936768219_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=833d8c&_nc_ohc=HGsMppS17OwQ7kNvgEemrmD&_nc_ht=scontent.fcai22-1.fna&_nc_gid=AiM8v3UBS1Ml2Y28OIbUqvq&oh=00_AYBTI-tcusJWE_BNUlapLdXLRRz515J1zd_4soxnzmFCxQ&oe=66E9FC74') no-repeat center center/cover;
+}
+
+.group2-bg {
+    background: url('https://scontent.fcai22-2.fna.fbcdn.net/v/t39.30808-6/459198765_926798699484702_178209969385748113_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=833d8c&_nc_ohc=WhILMpDZqUIQ7kNvgFGnCxm&_nc_ht=scontent.fcai22-2.fna&oh=00_AYAKhhycJJTqZQbeeKnKkqgXGcOgAnf4-T9pjOxs77uosQ&oe=66EA10DC') no-repeat center center/cover;
+}
+
+.group3-bg {
+    background: url('https://scontent.fcai22-1.fna.fbcdn.net/v/t39.30808-6/459228841_926798669484705_8562121352527171466_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=833d8c&_nc_ohc=XC4zknCNIdkQ7kNvgFL0u-x&_nc_ht=scontent.fcai22-1.fna&oh=00_AYB1SIuOAmE_zpN6xkBeT_8e1kryBo2XUo6JceIfAgMo-g&oe=66EA09CF') no-repeat center center/cover;
+}
+
+.group4-bg {
+    background: url('https://scontent.fcai22-1.fna.fbcdn.net/v/t39.30808-6/459239003_926798642818041_8964169204636436459_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=833d8c&_nc_ohc=qx2hi3HSjDQQ7kNvgG8xUUH&_nc_ht=scontent.fcai22-1.fna&_nc_gid=Al0pNf-hMNdMDkpd-9WwzCT&oh=00_AYAB7XXLx8YaQd4w0QVasizeUq4D5iCG-fywEAmv5N_Y0g&oe=66EA0915') no-repeat center center/cover;
+}
+        
+
+        .group-section h2 {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+        }
+
+        .about-section {
+            padding: 4rem 1rem;
+            text-align: center;
+            background: rgba(51, 51, 51, 0.8);
+            color: #fff;
+        }
+
+        footer {
+            background: rgba(51, 51, 51, 0.8); /* Semi-transparent background */
+            color: #fff;
+            text-align: center;
+            padding: 2rem 1rem;
+            position: relative;
+        }
+
+        footer a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 0.5rem;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        footer .social-icons img {
+            width: 24px;
+            height: 24px;
+            margin: 0 0.5rem;
+        }
+
+        footer .phone {
+            display: block;
+            margin-top: 1rem;
+        }
+
+        /* Modal styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1001;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background: rgba(0,0,0,0.4);
+        }
+
+        .modal-content {
+            background: #fff;
+            margin: 15% auto;
+            padding: 2rem;
+            width: 80%;
+            max-width: 400px;
+            border-radius: 5px;
+            position: relative;
+        }
+
+        .modal-content h2 {
+            margin-bottom: 1rem;
+        }
+
+        .modal-content label {
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .modal-content input {
+            width: 100%;
+            padding: 0.5rem;
+            margin-bottom: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .modal-content button {
+            background: #0066cc;
+            border: none;
+            color: #fff;
+            padding: 0.75rem 1.5rem;
+            font-size: 1rem;
+            cursor: pointer;
+            text-transform: uppercase;
+            border-radius: 5px;
+        }
+
+        .modal-content button:hover {
+            background: #005bb5;
+        }
+
+        .close {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+                /* Responsive styling */
+                @media screen and (max-width: 768px) {
+            header .container {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            nav ul {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+
+            .shapes-section {
+                flex-direction: column;
+            }
+
+            .shape, .group-background {
+                width: 100%;
+                height: auto;
+            }
+        }
+
+    </style>
+    <!-- CSS CODE-->
+
+
+    <!-- HTML CODE-->
+
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1 class="logo">AI Community</h1>
+            <nav>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#contact-info">Contact</a></li> <!-- Updated link -->
+                </ul>
+                <button class="login-button" onclick="openLogin()">Log In</button>
+                <button class="signup-button" onclick="openSignUp()">Sign Up</button>
+                <button class="logout-button" onclick="logout()">Log Out</button>
+            </nav>
+        </div>
+    </header>
+    
+    <br>
+    <br>
+
+    <section id="intro" class="intro-section">
+        <div class="intro-content">
+            <h3>
+            <p>Welcome to the AI Community. We're delighted to have you here.</p>
+        </h3>
+            <p class="highlight">Discover the best with us!</p>
+            <h3>
+            <p>Join us and experience the difference.</p>
+        </h3>
+            <a href="#shapes" class="cta-button">Learn More</a>
+        </div>
+    </section>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <section id="shapes" class="shapes-section">
+        <a href="#group1" class="shape">Group 1</a>
+        <a href="#group2" class="shape">Group 2</a>
+        <a href="#group3" class="shape">Group 3</a>
+        <a href="#group4" class="shape">Group 4</a>
+    </section>
+
+    <section id="group1" class="group-section">
+        <div class="group-background group1-bg">
+            <big>
+                <bold>
+            <h2>Group 1</h2>
+        </big>
+    </bold>
+
+        </div>
+        <a href="#shapes" class="cta-button">Groups</a>
+        <a href="#group2" class="cta-button">Group 2</a>
+        <a href="#group3" class="cta-button">Group 3</a>
+        <a href="#group4" class="cta-button">Group 4</a>
+    
+    </section>
+    
+    <section id="group2" class="group-section">
+        <div class="group-background group2-bg">
+            <big>
+                <bold>
+            <h2>Group 2</h2>
+        </big>
+    </bold>
+    
+
+        </div>
+        <a href="#shapes" class="cta-button">Groups</a>
+        <a href="#group1" class="cta-button">Group 1</a>
+        <a href="#group3" class="cta-button">Group 3</a>
+        <a href="#group4" class="cta-button">Group 4</a>
+
+    </section>
+    
+    <section id="group3" class="group-section">
+        <div class="group-background group3-bg">
+            <big>
+                <bold>
+            <h2>Group 3</h2>
+        </big>
+    </bold>
+    
+        </div>
+        <a href="#shapes" class="cta-button">Groups</a>
+        <a href="#group1" class="cta-button">Group 1</a>
+        <a href="#group2" class="cta-button">Group 2</a>
+        <a href="#group4" class="cta-button">Group 4</a>
+
+    </section>
+    
+    <section id="group4" class="group-section">
+        <div class="group-background group4-bg">
+            <big>
+                <bold>
+            <h2>Group 4</h2>
+        </big>
+    </bold>
+
+        </div>
+        <a href="#shapes" class="cta-button">Groups</a>
+        <a href="#group1" class="cta-button">Group 1</a>
+        <a href="#group2" class="cta-button">Group 2</a>
+        <a href="#group3" class="cta-button">Group 3</a>
+
+    </section>
+    
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <section id="about" class="about-section">
+        <h1> <big>
+        <p>About Us</p>
+    </big>
+    </h1>
+        <h3>
+        <p>We are the first group to attend the AI course organized by the Ministry of Irrigation and Water Resources.</p>
+    </h3>
+    </section>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<footer>
+    <p>Thank You For Visiting Us.</p>
+    <div class="social-icons">
+        <a href="https://www.facebook.com/rctws.org" target="_blank"><img src="https://img.icons8.com/ios-filled/50/ffffff/facebook-new.png" alt="Facebook"></a>
+        <a href="http://rctws.org/" target="_blank" title="Your Website"><img src="https://img.icons8.com/ios-filled/50/ffffff/globe.png" alt="Website"></a>
+              </div>
+    <p id="contact-info" class="phone">Phone: <a href="tel:+1234567890">+20 1095 788 024</a></p>
+</footer>
+
+
+    <!-- Log In Modal -->
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeLogin()">&times;</span>
+            <h2>Log In</h2>
+            <form id="loginForm">
+                <label for="loginEmail">Email:</label>
+                <input type="email" id="loginEmail" required>
+                <label for="loginPassword">Password:</label>
+                <input type="password" id="loginPassword" required>
+                <button type="submit">Log In</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Sign Up Modal -->
+    <div id="signupModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeSignUp()">&times;</span>
+            <h2>Sign Up</h2>
+            <form id="signupForm">
+                <label for="signupName">Name:</label>
+                <input type="text" id="signupName" required>
+                <label for="signupEmail">Email:</label>
+                <input type="email" id="signupEmail" required>
+                <label for="signupPassword">Password:</label>
+                <input type="password" id="signupPassword" required>
+                <button type="submit">Sign Up</button>
+            </form>
+        </div>
+    </div>
+
+        <!-- HTML CODE-->
+
+
+            <!-- Java script CODE-->
+
+    <script>
+        // Handle Log In
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const email = document.getElementById('loginEmail').value;
+            const password = document.getElementById('loginPassword').value;
+
+            const storedEmail = localStorage.getItem('email');
+            const storedPassword = localStorage.getItem('password');
+
+            if (email === storedEmail && password === storedPassword) {
+                localStorage.setItem('loggedIn', 'true');
+                document.querySelector('.login-button').style.display = 'none';
+                document.querySelector('.signup-button').style.display = 'none';
+                document.querySelector('.logout-button').style.display = 'inline-block';
+                closeLogin();
+            } else {
+                alert('Invalid email or password');
+            }
+        });
+
+        // Handle Sign Up
+        document.getElementById('signupForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const name = document.getElementById('signupName').value;
+            const email = document.getElementById('signupEmail').value;
+            const password = document.getElementById('signupPassword').value;
+
+            localStorage.setItem('name', name);
+            localStorage.setItem('email', email);
+            localStorage.setItem('password', password);
+            localStorage.setItem('loggedIn', 'true');
+
+            document.querySelector('.login-button').style.display = 'none';
+            document.querySelector('.signup-button').style.display = 'none';
+            document.querySelector('.logout-button').style.display = 'inline-block';
+            closeSignUp();
+        });
+
+        // Open Log In Modal
+        function openLogin() {
+            document.getElementById('loginModal').style.display = 'block';
+        }
+
+        // Close Log In Modal
+        function closeLogin() {
+            document.getElementById('loginModal').style.display = 'none';
+        }
+
+        // Open Sign Up Modal
+        function openSignUp() {
+            document.getElementById('signupModal').style.display = 'block';
+        }
+
+        // Close Sign Up Modal
+        function closeSignUp() {
+            document.getElementById('signupModal').style.display = 'none';
+        }
+
+        // Handle Log Out
+        function logout() {
+            localStorage.removeItem('loggedIn');
+            document.querySelector('.login-button').style.display = 'inline-block';
+            document.querySelector('.signup-button').style.display = 'inline-block';
+            document.querySelector('.logout-button').style.display = 'none';
+        }
+
+        // Check if user is logged in on page load
+        window.onload = function() {
+            if (localStorage.getItem('loggedIn') === 'true') {
+                document.querySelector('.login-button').style.display = 'none';
+                document.querySelector('.signup-button').style.display = 'none';
+                document.querySelector('.logout-button').style.display = 'inline-block';
+            }
+        }
+    </script>
+                <!-- Java script CODE-->
+
+</body>
+</html>
